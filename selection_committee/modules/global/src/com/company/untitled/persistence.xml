@@ -5,5 +5,10 @@
         <class>com.company.untitled.person.Worker</class>
         <class>com.company.untitled.college.Department</class>
         <class>com.company.untitled.college.Specialty</class>
+        <class>com.company.untitled.progress.IndividualProgress</class>
+        <class>com.company.untitled.progress.Subject</class>
+        <class>com.company.untitled.progress.RatingList</class>
+        <class>com.company.untitled.progress.Certificate</class>
+        <class>com.company.untitled.Applicants</class>
     </persistence-unit>
 </persistence>

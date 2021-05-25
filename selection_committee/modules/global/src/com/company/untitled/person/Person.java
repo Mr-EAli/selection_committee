@@ -30,6 +30,9 @@ public class Person extends BaseUuidEntity {
     @MetaProperty
     private String sex;
 
+    @MetaProperty
+    private String address;
+
     public Sex getSex() {
         return sex == null ? null : Sex.fromId(sex);
     }
@@ -68,6 +71,14 @@ public class Person extends BaseUuidEntity {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Transient
