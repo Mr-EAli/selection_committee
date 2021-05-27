@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://certificateBrowse.caption"
+        messagesPack="com.company.untitled.web.screens.certificate">
+    <data>
+        <collection id="ratingListsDc" class="com.company.untitled.progress.RatingList">
+            <view extends="_local">
+                <property name="subject" view="_minimal"/>
+            </view>
+            <loader id="ratingListsDl">
+                <query>
+                    <![CDATA[select e.RatingList from untitled_Certificate e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <layout>
+        <vbox>
+            <hbox width="100%">
+                <hbox spacing="true" align="TOP_LEFT">
+                    <label value="msg://certificateNum" align="MIDDLE_LEFT"/>
+                    <textField id="numberField" property="number" width="300px"/>
+                    <button width="40px" icon="EDIT"/>
+                </hbox>
+                <hbox spacing="true" align="TOP_RIGHT">
+                    <label value="msg://school" align="MIDDLE_LEFT"/>
+                    <textField id="schoolField" property="school" width="300px"/>
+                    <button width="40px" icon="EDIT"/>
+                </hbox>
+            </hbox>
+            <groupTable id="ratingListsTable" height="100px" width="200px" dataContainer="ratingListsDc">
+                <actions>
+                    <action id="add" type="add"/>
+                    <action id="create" type="create"/>
+                    <action id="edit" type="edit"/>
+                </actions>
+                <buttonsPanel alwaysVisible="true">
+                    <button id="ratingListsTableAddBtn" action="ratingListsTable.add"/>
+                    <button id="ratingListsTableCreateBtn" action="ratingListsTable.create"/>
+                    <button id="ratingListsTableEditBtn" action="ratingListsTable.edit"/>
+                </buttonsPanel>
+                <columns>
+                    <column id="subject"/>
+                    <column id="rating"/>
+                </columns>
+            </groupTable>
+
+        </vbox>
+    </layout>
+</window>
